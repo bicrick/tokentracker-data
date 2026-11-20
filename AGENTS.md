@@ -31,5 +31,7 @@ https://tokentracker.patrickbrown.dev/llms.txt
 - A machine stopped syncing (an issue says so, or stats look stale): on that computer run
   `npx @bicrick/tokentracker@latest init --yes`. Safe to repeat; nothing is counted twice.
 - Add another computer: run the same command there, signed into the same GitHub.
-- Change the Cursor profile: `npx @bicrick/tokentracker connect` (or edit cursorHandle in tokentracker.json).
+- Cursor: usage comes from the public profile cursor.com/@username, fetched by this repo's Action.
+  If there is no Cursor data, ask the user whether they use Cursor and for their username, then run
+  `npx @bicrick/tokentracker@latest connect --cursor <username>`.
 - Data format: FORMAT.md. Stop syncing: `npx @bicrick/tokentracker uninstall`. Delete everything: delete this repo.

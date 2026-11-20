@@ -1,0 +1,39 @@
+# tokentracker workflow v1. Managed by the tokentracker CLI, which
+# updates this file when a newer version ships; edits here may be replaced.
+# Turns machines/**/*.json into a static API on GitHub Pages.
+name: tokentracker
+on:
+  push:
+    paths: ['machines/**', 'tokentracker.json', '.github/workflows/tokentracker.yml']
+  schedule:
+    - cron: '23 */6 * * *' # refresh Cursor and check for machines that stopped syncing
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  issues: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npx -y @bicrick/tokentracker@latest build --repo . --out _site
+      - run: npx -y @bicrick/tokentracker@latest check --repo .
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

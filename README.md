@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://tokentracker.patrickbrown.dev/u/bicrick"><img src="https://raw.githubusercontent.com/bicrick/tokentracker/main/docs/assets/banner.png" alt="tokentracker" width="100%"></a>
+  <a href="https://bicrick.github.io/tokentracker-data/"><img src="https://raw.githubusercontent.com/bicrick/tokentracker/main/docs/assets/banner.png" alt="tokentracker" width="100%"></a>
 </p>
 
 <p align="center">
@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://tokentracker.patrickbrown.dev/u/bicrick">Profile</a> ·
-  <a href="https://tokentracker.patrickbrown.dev/api/v1/users/bicrick">API</a> ·
+  <a href="https://bicrick.github.io/tokentracker-data/">Page</a> ·
+  <a href="https://bicrick.github.io/tokentracker-data/api/v1/index.json">API</a> ·
   <a href="AGENTS.md">For agents</a>
 </p>
 

@@ -9,7 +9,6 @@ written by the tokentracker CLI. Do not edit files in `machines/` by hand.
     https://bicrick.github.io/tokentracker-data/api/v1/usage.json        daily usage split by tool (also usage-week.json, usage-month.json)
     https://bicrick.github.io/tokentracker-data/api/v1/models.json       per model: tokens, responses, share, first/last used
     https://bicrick.github.io/tokentracker-data/api/v1/tools.json        per tool
-    https://bicrick.github.io/tokentracker-data/api/v1/devices.json      per machine, last sync
     https://bicrick.github.io/tokentracker-data/api/v1/heatmap.json      calendar grid (also heatmap-365d.json, heatmap-90d.json)
     https://bicrick.github.io/tokentracker-data/api/v1/rows.json         every daily row      https://bicrick.github.io/tokentracker-data/api/v1/index.json   every file
 
@@ -17,7 +16,7 @@ Time ranges are folders: https://bicrick.github.io/tokentracker-data/api/v1/{ytd
 
 For anything else (from/to dates, tools=a,b, models=x,y, group=, split=, format=csv), the query layer computes
 from the same rows.json and stores nothing: https://tokentracker.patrickbrown.dev/api/v1/users/bicrick/usage?from=2026-11-01&group=week&split=tool
-(resources: usage, models, tools, heatmap, stats, devices; profile at https://tokentracker.patrickbrown.dev/api/v1/users/bicrick)
+(resources: usage, models, tools, heatmap, stats; profile at https://tokentracker.patrickbrown.dev/api/v1/users/bicrick)
 
 Semantics: tokens = input + output + reasoning + cacheRead + cacheWrite. responses = model calls.
 Dates are local days. Cursor has totals only (model "cursor/all"). Full reference:

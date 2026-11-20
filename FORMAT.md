@@ -16,7 +16,6 @@ always writes the same files even if it is renamed or set up again.
     {
       "format": 1,
       "machine": "<machine-id>",
-      "device": "my-laptop",            // display name, may change
       "year": 2026,
       "syncedOn": "2026-11-19",         // last day this machine synced (written at least daily)
       "updatedAt": "2026-11-19T18:00:00Z", // last time any number changed

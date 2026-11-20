@@ -1,1 +1,0 @@
-{"format":1,"machine":"dabe4610288c0926","device":"agent-test","year":2026,"syncedOn":"2026-11-20","updatedAt":"2026-11-20T02:42:14.730Z","rows":[{"date":"2026-11-19","source":"claude-code","model":"anthropic/claude-docker-test","input":100,"output":50,"reasoning":0,"cacheRead":0,"cacheWrite":0,"messages":1}]}

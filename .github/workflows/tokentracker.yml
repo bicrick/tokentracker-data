@@ -1,4 +1,4 @@
-# tokentracker workflow v1. Managed by the tokentracker CLI, which
+# tokentracker workflow v2. Managed by the tokentracker CLI, which
 # updates this file when a newer version ships; edits here may be replaced.
 # Turns machines/**/*.json into a static API on GitHub Pages.
 name: tokentracker
@@ -15,13 +15,10 @@ permissions:
   issues: write
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -35,5 +32,12 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - id: deploy
         uses: actions/deploy-pages@v4
